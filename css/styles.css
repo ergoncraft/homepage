@@ -124,8 +124,8 @@ a:focus-visible, button:focus-visible {
 }
 .nav-links a:hover { color: var(--ink); }
 
-/* Palette switch (for trying out the two concepts) */
-.palette-switch {
+/* Segmented switches: colour palette, language */
+.switch {
   display: inline-flex;
   gap: 2px;
   padding: 3px;
@@ -133,7 +133,7 @@ a:focus-visible, button:focus-visible {
   border-radius: 999px;
   background: var(--surface);
 }
-.palette-switch button {
+.switch button {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
@@ -148,21 +148,28 @@ a:focus-visible, button:focus-visible {
   cursor: pointer;
   transition: background-color .2s, color .2s;
 }
-.palette-switch button[aria-pressed="true"] {
+.switch button[aria-pressed="true"] {
   background: var(--ink);
   color: var(--bg);
 }
-.palette-switch .swatch {
+.switch .swatch {
   width: 1.1rem; height: 1.1rem;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--sw-dark) 50%, var(--sw-accent) 50%);
   box-shadow: inset 0 0 0 1px rgb(255 255 255 / .25);
 }
+.switch-text button {
+  padding: 0.3rem 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.switch + .switch { margin-left: calc(-1 * var(--space-3)); }
 
 @media (max-width: 760px) {
   .nav-links { display: none; }
-  .palette-switch .label { display: none; }
-  .palette-switch button { padding: 0.3rem; }
+  .switch .label { display: none; }
+  .switch button { padding: 0.3rem; }
+  .switch-text button { padding: 0.3rem 0.5rem; }
 }
 
 /* --- Buttons ------------------------------------------------------------ */

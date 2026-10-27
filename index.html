@@ -3,22 +3,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ErgonCraft — Tools for Humans</title>
-  <meta name="description" content="ErgonCraft builds honest software tools for the human mind: no slot-machine tricks, no data collection. Engineered for presence, purpose, and peace of mind.">
+  <title data-i18n="meta.title">ErgonCraft — Tools for Humans</title>
+  <meta name="description" data-i18n-attr="content:meta.desc" content="ErgonCraft builds honest software tools for the human mind: no slot-machine tricks, no data collection. Engineered for presence, purpose, and peace of mind.">
   <meta name="theme-color" content="#1E242B">
   <link rel="icon" type="image/svg+xml" href="assets/favicon-sage.svg" id="favicon">
   <link rel="preload" href="fonts/Inter-Variable.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/styles.css">
   <script>
-    /* Pick the palette before first paint: ?palette=ochre|sage, else the last choice. */
+    /* Before first paint: palette (?palette=ochre|sage, else the last choice)
+       and language (?lang=en|de, else the last choice, else the browser's). */
     (function () {
-      var p = new URLSearchParams(location.search).get("palette");
-      if (!p) { try { p = localStorage.getItem("ec-palette"); } catch (e) {} }
+      var q = new URLSearchParams(location.search), root = document.documentElement;
+      function saved(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+
+      var p = q.get("palette") || saved("ec-palette");
       if (p === "sage" || p === "ochre") {
-        document.documentElement.dataset.palette = p;
+        root.dataset.palette = p;
         document.getElementById("favicon").href = "assets/favicon-" + p + ".svg";
       }
+
+      var l = q.get("lang") || saved("ec-lang") ||
+              ((navigator.language || "").toLowerCase().indexOf("de") === 0 ? "de" : "en");
+      root.lang = (l === "de") ? "de" : "en";
     })();
   </script>
 </head>
@@ -55,21 +62,21 @@
   <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
 </svg>
 
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
 
 <header class="site-header">
   <div class="container">
-    <a class="brand" href="#top" aria-label="ErgonCraft — home">
+    <a class="brand" href="#top" aria-label="ErgonCraft — home" data-i18n-attr="aria-label:brand.home">
       <svg class="mark" aria-hidden="true"><use href="#ec-mark"/></svg>
       <span class="wordmark"><b>ERGON</b><span>CRAFT</span></span>
     </a>
-    <nav class="nav" aria-label="Main">
+    <nav class="nav" aria-label="Main" data-i18n-attr="aria-label:nav.main">
       <div class="nav-links">
-        <a href="#manifesto">Manifesto</a>
-        <a href="#products">Products</a>
-        <a href="#impressum">Impressum</a>
+        <a href="#manifesto" data-i18n="nav.manifesto">Manifesto</a>
+        <a href="#products" data-i18n="nav.products">Products</a>
+        <a href="#impressum" data-i18n="nav.impressum">Impressum</a>
       </div>
-      <div class="palette-switch" role="group" aria-label="Colour palette">
+      <div class="switch" role="group" aria-label="Colour palette" data-i18n-attr="aria-label:nav.palette">
         <button type="button" data-set-palette="sage" aria-pressed="true" title="Slate &amp; Sage">
           <span class="swatch" style="--sw-dark:#1E242B;--sw-accent:#8EA89D"></span>
           <span class="label">Sage</span>
@@ -78,6 +85,10 @@
           <span class="swatch" style="--sw-dark:#2C2623;--sw-accent:#E4A083"></span>
           <span class="label">Ochre</span>
         </button>
+      </div>
+      <div class="switch switch-text" role="group" aria-label="Language" data-i18n-attr="aria-label:nav.lang">
+        <button type="button" data-set-lang="en" aria-pressed="true" lang="en" title="English">EN</button>
+        <button type="button" data-set-lang="de" aria-pressed="false" lang="de" title="Deutsch">DE</button>
       </div>
     </nav>
   </div>
@@ -89,20 +100,20 @@
   <section class="hero is-dark" id="top">
     <div class="container">
       <div>
-        <span class="eyebrow">Welcome to ErgonCraft</span>
-        <h1>Tools for Humans.<br><em>Built for Real Life.</em></h1>
-        <p class="lead">
+        <span class="eyebrow" data-i18n="hero.eyebrow">Welcome to ErgonCraft</span>
+        <h1 lang="en">Tools for Humans.<br><em>Built for Real Life.</em></h1>
+        <p class="lead" data-i18n="hero.lead">
           We believe technology should be a tool — like a well-balanced hammer
           or a reliable compass. It should <strong>extend your abilities,
           not steal your attention.</strong>
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#manifesto">Read the manifesto
+          <a class="btn btn-primary" href="#manifesto"><span data-i18n="hero.cta1">Read the manifesto</span>
             <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <a class="btn btn-ghost" href="#products">Meet Ergon Launcher</a>
+          <a class="btn btn-ghost" href="#products" data-i18n="hero.cta2">Meet Ergon Launcher</a>
         </div>
       </div>
-      <svg class="hero-mark" role="img" aria-label="ErgonCraft logo: a hand with an upward arrow inside a hexagon"><use href="#ec-mark"/></svg>
+      <svg class="hero-mark" role="img" aria-label="ErgonCraft logo: a hand with an upward arrow inside a hexagon" data-i18n-attr="aria-label:hero.mark"><use href="#ec-mark"/></svg>
     </div>
   </section>
 
@@ -110,11 +121,11 @@
   <section class="section" id="manifesto">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">The ErgonCraft Manifesto</span>
-        <h2>Software for the human mind, not for algorithms.</h2>
+        <span class="eyebrow" data-i18n="man.eyebrow">The ErgonCraft Manifesto</span>
+        <h2 data-i18n="man.title">Software for the human mind, not for algorithms.</h2>
       </div>
 
-      <p class="belief">
+      <p class="belief" data-i18n="man.belief">
         At <strong>ErgonCraft</strong>, we build tools that serve what you do
         in real life — then step out of the way.
       </p>
@@ -122,34 +133,34 @@
       <ul class="principles">
         <li class="principle">
           <div class="icon"><svg aria-hidden="true"><use href="#i-human"/></svg></div>
-          <h3>Humans over Mechanisms</h3>
-          <p>We build tools that adapt to your life — at work, in engineering,
+          <h3 data-i18n="man.p1.h">Humans over Mechanisms</h3>
+          <p data-i18n="man.p1.p">We build tools that adapt to your life — at work, in engineering,
             and with family. Never the other way around.</p>
         </li>
         <li class="principle">
           <div class="icon"><svg aria-hidden="true"><use href="#i-focus"/></svg></div>
-          <h3>Ergonomics of the Mind</h3>
-          <p>No slot-machine tricks, no doomscrolling, no disguised ad traps.
+          <h3 data-i18n="man.p2.h">Ergonomics of the Mind</h3>
+          <p data-i18n="man.p2.p">No slot-machine tricks, no doomscrolling, no disguised ad traps.
             Just functional clarity and conscious focus.</p>
         </li>
         <li class="principle">
           <div class="icon"><svg aria-hidden="true"><use href="#i-shield"/></svg></div>
-          <h3>Transparent Ethics</h3>
-          <p>A fair price, zero data collection, and absolute respect for
+          <h3 data-i18n="man.p3.h">Transparent Ethics</h3>
+          <p data-i18n="man.p3.p">A fair price, zero data collection, and absolute respect for
             your privacy.</p>
         </li>
       </ul>
 
       <div class="statement is-dark">
-        <p>Technology is our future. <span>But real life happens outside the screen.</span></p>
-        <p class="tagline"><b>ERGON</b>CRAFT — Engineered for presence, purpose, and peace of mind.</p>
+        <p data-i18n="man.statement">Technology is our future. <span>But real life happens outside the screen.</span></p>
+        <p class="tagline" lang="en"><b>ERGON</b>CRAFT — Engineered for presence, purpose, and peace of mind.</p>
       </div>
 
       <aside class="name-note" aria-labelledby="name-title">
         <div class="greek" lang="grc">ἔργον</div>
         <div>
-          <h3 id="name-title">The name ErgonCraft</h3>
-          <p>
+          <h3 id="name-title" data-i18n="man.name.h">The name ErgonCraft</h3>
+          <p data-i18n="man.name.p">
             Derived from the Ancient Greek word <em>Ergon</em> (ἔργον), meaning
             <em>action</em>, <em>work</em>, or <em>deed</em> — and the root of
             <em>ergonomics</em>, the science of designing tools for human use.
@@ -166,20 +177,20 @@
   <section class="section products" id="products">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">Products</span>
-        <h2>Tools from the workshop.</h2>
-        <p>Each one does a job well, respects your attention, and keeps your data where it belongs: with you.</p>
+        <span class="eyebrow" data-i18n="prod.eyebrow">Products</span>
+        <h2 data-i18n="prod.title">Tools from the workshop.</h2>
+        <p data-i18n="prod.lead">Each one does a job well, respects your attention, and keeps your data where it belongs: with you.</p>
       </div>
 
       <article class="product" aria-labelledby="launcher-title">
         <div>
           <div class="product-meta">
             <span class="tag">Android</span>
-            <span class="tag outline">In development</span>
-            <span class="tag outline">No ads · No tracking</span>
+            <span class="tag outline" data-i18n="prod.tag.dev">In development</span>
+            <span class="tag outline" data-i18n="prod.tag.private">No ads · No tracking</span>
           </div>
           <h3 id="launcher-title">Ergon Launcher</h3>
-          <p class="pitch">
+          <p class="pitch" data-i18n="prod.pitch">
             A calm home screen built on a gesture, not a grid. Hold, slide,
             release — and you are where you meant to go, before the screen
             can pull you anywhere else.
@@ -188,39 +199,39 @@
           <ul class="features">
             <li>
               <svg aria-hidden="true"><use href="#i-radial"/></svg>
-              <div><h4>Press, slide, release</h4>
-                <p>Hold Start and your categories fan out. Slide onto one, release on an app. Muscle memory instead of hunting through icons.</p></div>
+              <div><h4 data-i18n="prod.f1.h">Press, slide, release</h4>
+                <p data-i18n="prod.f1.p">Hold Start and your categories fan out. Slide onto one, release on an app. Muscle memory instead of hunting through icons.</p></div>
             </li>
             <li>
               <svg aria-hidden="true"><use href="#i-thumb"/></svg>
-              <div><h4>Right under your thumb</h4>
-                <p>Start sits where your thumb rests, with a Favorites hub just above it. Both can be moved anywhere.</p></div>
+              <div><h4 data-i18n="prod.f2.h">Right under your thumb</h4>
+                <p data-i18n="prod.f2.p">Start sits where your thumb rests, with a Favorites hub just above it. Both can be moved anywhere.</p></div>
             </li>
             <li>
               <svg aria-hidden="true"><use href="#i-profiles"/></svg>
-              <div><h4>Profiles for your life</h4>
-                <p>Work, family, focus: each with its own apps, colours and call behaviour, switching automatically on your schedule.</p></div>
+              <div><h4 data-i18n="prod.f3.h">Profiles for your life</h4>
+                <p data-i18n="prod.f3.p">Work, family, focus: each with its own apps, colours and call behaviour, switching automatically on your schedule.</p></div>
             </li>
             <li>
               <svg aria-hidden="true"><use href="#i-calm"/></svg>
-              <div><h4>Calm on demand</h4>
-                <p>Silent mode lets only your VIP contacts through. Optional grayscale takes the shine off the screen.</p></div>
+              <div><h4 data-i18n="prod.f4.h">Calm on demand</h4>
+                <p data-i18n="prod.f4.p">Silent mode lets only your VIP contacts through. Optional grayscale takes the shine off the screen.</p></div>
             </li>
             <li>
               <svg aria-hidden="true"><use href="#i-declutter"/></svg>
-              <div><h4>Declutter</h4>
-                <p>See which apps you haven't opened in months and remove them, one confirmation at a time.</p></div>
+              <div><h4 data-i18n="prod.f5.h">Declutter</h4>
+                <p data-i18n="prod.f5.p">See which apps you haven't opened in months and remove them, one confirmation at a time.</p></div>
             </li>
             <li>
               <svg aria-hidden="true"><use href="#i-craft"/></svg>
-              <div><h4>Make it yours</h4>
-                <p>Calm built-in themes and four looks (circles, leaves, pie or ensō). You can even brush your own ensō.</p></div>
+              <div><h4 data-i18n="prod.f6.h">Make it yours</h4>
+                <p data-i18n="prod.f6.p">Calm built-in themes and four looks (circles, leaves, pie or ensō). You can even brush your own ensō.</p></div>
             </li>
           </ul>
         </div>
 
         <!-- Illustration: the radial menu while Start is held -->
-        <svg class="phone" viewBox="0 0 300 600" role="img" aria-label="Ergon Launcher home screen: holding Start fans out five categories; one is selected and shows its apps.">
+        <svg class="phone" viewBox="0 0 300 600" role="img" aria-label="Ergon Launcher home screen: holding Start fans out five categories; one is selected and shows its apps." data-i18n-attr="aria-label:prod.phone">
           <rect class="ph-body" x="4" y="4" width="292" height="592" rx="44"/>
           <rect class="ph-screen" x="13" y="13" width="274" height="574" rx="36"/>
           <circle class="ph-dim" cx="150" cy="32" r="5"/>
@@ -228,14 +239,14 @@
           <!-- corner buttons: search, profile, settings, drawer -->
           <circle class="ph-ui" cx="44" cy="64" r="14"/>
           <circle class="ph-ui" cx="256" cy="64" r="14"/>
-          <text class="ph-small" x="236" y="68" text-anchor="end">Focus</text>
+          <text class="ph-small" x="236" y="68" text-anchor="end" data-i18n="prod.phone.profile">Focus</text>
           <circle class="ph-ui" cx="44" cy="552" r="14"/>
           <circle class="ph-ui" cx="256" cy="552" r="14"/>
 
           <!-- live preview of the selection -->
           <g class="rm-pop late">
             <rect class="ph-app-on" x="128" y="106" width="44" height="44" rx="13"/>
-            <text class="ph-title" x="150" y="176" text-anchor="middle">Calendar</text>
+            <text class="ph-title" x="150" y="176" text-anchor="middle" data-i18n="prod.phone.app">Calendar</text>
           </g>
 
           <!-- finger trail -->
@@ -280,16 +291,16 @@
 
       <div class="more">
         <svg class="mark" aria-hidden="true"><use href="#ec-mark"/></svg>
-        <p>More tools are on the workbench. They'll appear here when they're ready.</p>
+        <p data-i18n="prod.more">More tools are on the workbench. They'll appear here when they're ready.</p>
       </div>
     </div>
   </section>
 
-  <!-- ===================== Impressum ===================== -->
+  <!-- ===================== Impressum (German in both languages) ===================== -->
   <section class="section" id="impressum" lang="de">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">Impressum · Legal notice</span>
+        <span class="eyebrow" data-i18n="imp.eyebrow">Impressum · Legal notice</span>
         <h2>Impressum</h2>
       </div>
 
@@ -344,7 +355,7 @@
             ausgeliefert. Beim Aufruf verarbeitet der Hosting-Anbieter
             (<span class="todo">Name, Anschrift</span>) technisch notwendige Server-Logdaten
             wie IP-Adresse und Zeitpunkt des Zugriffs (Art. 6 Abs. 1 lit. f DSGVO).
-            Die gewählte Farbpalette wird nur lokal in Ihrem Browser gespeichert.</p>
+            Die gewählte Farbpalette und Sprache werden nur lokal in Ihrem Browser gespeichert.</p>
         </div>
       </div>
     </div>
@@ -354,44 +365,85 @@
 
 <footer class="site-footer is-dark">
   <div class="container">
-    <a class="brand" href="#top" aria-label="ErgonCraft — back to top">
+    <a class="brand" href="#top" aria-label="ErgonCraft — back to top" data-i18n-attr="aria-label:brand.top">
       <svg class="mark" aria-hidden="true"><use href="#ec-mark"/></svg>
       <span class="wordmark"><b>ERGON</b><span>CRAFT</span></span>
     </a>
     <nav class="footer-links" aria-label="Footer">
-      <a href="#manifesto">Manifesto</a>
-      <a href="#products">Products</a>
-      <a href="#impressum">Impressum</a>
+      <a href="#manifesto" data-i18n="nav.manifesto">Manifesto</a>
+      <a href="#products" data-i18n="nav.products">Products</a>
+      <a href="#impressum" data-i18n="nav.impressum">Impressum</a>
     </nav>
-    <small>© 2026 ErgonCraft · Engineered for presence, purpose, and peace of mind.</small>
+    <small lang="en">© 2026 ErgonCraft · Engineered for presence, purpose, and peace of mind.</small>
   </div>
 </footer>
 
+<script src="js/i18n.js"></script>
 <script>
-  /* Palette switch: updates <html data-palette>, favicon and the saved choice. */
   (function () {
     var root = document.documentElement;
-    var buttons = document.querySelectorAll("[data-set-palette]");
-    var favicon = document.getElementById("favicon");
-    var themeColor = document.querySelector('meta[name="theme-color"]');
-
-    function apply(p) {
-      root.dataset.palette = p;
-      favicon.href = "assets/favicon-" + p + ".svg";
-      themeColor.content = getComputedStyle(root).getPropertyValue("--c-dark-1").trim();
-      buttons.forEach(function (b) {
-        b.setAttribute("aria-pressed", String(b.dataset.setPalette === p));
+    function save(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+    function press(attr, value) {
+      document.querySelectorAll("[" + attr + "]").forEach(function (b) {
+        b.setAttribute("aria-pressed", String(b.getAttribute(attr) === value));
       });
     }
 
-    buttons.forEach(function (b) {
-      b.addEventListener("click", function () {
-        apply(b.dataset.setPalette);
-        try { localStorage.setItem("ec-palette", b.dataset.setPalette); } catch (e) {}
+    /* Palette switch: updates <html data-palette>, favicon and theme colour. */
+    var favicon = document.getElementById("favicon");
+    var themeColor = document.querySelector('meta[name="theme-color"]');
+
+    function applyPalette(p) {
+      root.dataset.palette = p;
+      favicon.href = "assets/favicon-" + p + ".svg";
+      themeColor.content = getComputedStyle(root).getPropertyValue("--c-dark-1").trim();
+      press("data-set-palette", p);
+    }
+
+    /* Language switch: English is the HTML itself (kept as the fallback);
+       other languages come from window.EC_I18N. */
+    var texts = document.querySelectorAll("[data-i18n]");
+    var attrs = document.querySelectorAll("[data-i18n-attr]");
+    texts.forEach(function (el) { el.dataset.i18nEn = el.innerHTML; });
+    attrs.forEach(function (el) {
+      el.getAttribute("data-i18n-attr").split(";").forEach(function (pair) {
+        var name = pair.split(":")[0];
+        el.setAttribute("data-i18n-en-" + name, el.getAttribute(name));
       });
     });
 
-    apply(root.dataset.palette || "sage");
+    function applyLang(l) {
+      var dict = (window.EC_I18N || {})[l];
+      if (!dict) l = "en";
+      root.lang = l;
+      texts.forEach(function (el) {
+        var t = dict && dict[el.dataset.i18n];
+        el.innerHTML = t != null ? t : el.dataset.i18nEn;
+      });
+      attrs.forEach(function (el) {
+        el.getAttribute("data-i18n-attr").split(";").forEach(function (pair) {
+          var kv = pair.split(":"), t = dict && dict[kv[1]];
+          el.setAttribute(kv[0], t != null ? t : el.getAttribute("data-i18n-en-" + kv[0]));
+        });
+      });
+      press("data-set-lang", l);
+    }
+
+    document.querySelectorAll("[data-set-palette]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        applyPalette(b.dataset.setPalette);
+        save("ec-palette", b.dataset.setPalette);
+      });
+    });
+    document.querySelectorAll("[data-set-lang]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        applyLang(b.dataset.setLang);
+        save("ec-lang", b.dataset.setLang);
+      });
+    });
+
+    applyPalette(root.dataset.palette || "sage");
+    applyLang(root.lang);
   })();
 </script>
 </body>
