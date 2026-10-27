@@ -19,6 +19,9 @@
   --c-accent: #8EA89D;   /* Accent — muted sage green */
   --c-light:  #F4F6F4;   /* Primary light — soft paper */
 
+  /* The logo hexagon is Dark 1, so dark sections sit one step deeper to
+     keep the hexagon visible (as Ochre does with Dark 2 on Dark 1). */
+  --c-deep:   #13171B;   /* Dark 1, deepened — dark section background */
   --logo-hex: var(--c-dark-1);
 }
 
@@ -30,6 +33,7 @@
   --c-accent: #E4A083;   /* Warm flesh & blush — logo hand & interaction */
   --c-light:  #FBF7F4;   /* Warm linen */
 
+  --c-deep:   var(--c-dark-1);   /* dark section background */
   --logo-hex: var(--c-dark-2);
 }
 
@@ -51,14 +55,14 @@
   --accent-wash:   color-mix(in oklab, var(--c-accent) 18%, var(--c-light));
 
   /* Dark surfaces (hero, statement band, footer) */
-  --dark-bg:       var(--c-dark-1);
+  --dark-bg:       var(--c-deep);
   --dark-surface:  color-mix(in oklab, var(--c-dark-1) 70%, var(--c-dark-2));
   --dark-ink:      var(--c-light);
   --dark-muted:    color-mix(in oklab, var(--c-light) 68%, var(--c-dark-1));
   --dark-line:     color-mix(in oklab, var(--c-dark-1) 78%, var(--c-light));
 
   /* Logo */
-  --logo-rim:      #272C30;
+  --logo-rim:      var(--logo-hex);   /* outline matches the fill: no visible border */
   --logo-accent:   var(--c-accent);
 
   /* --- 3. Type, spacing, shape, motion --------------------------------- */

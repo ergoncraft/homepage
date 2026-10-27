@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="190 0 2281 2722">
-  <polygon fill="#2C2623" stroke="#272C30" stroke-width="41" stroke-linejoin="round" points="1330,21 2445,690 2445,2028 1330,2697 216,2028 216,690"/>
+  <polygon fill="#2C2623" stroke="#2C2623" stroke-width="41" stroke-linejoin="round" points="1330,21 2445,690 2445,2028 1330,2697 216,2028 216,690"/>
   <g fill="none" stroke="#E4A083" stroke-width="90">
     <polyline points="1123,1770 1123,1100 926,1154 1330,530 1735,1154 1499,1100 1499,1638"/>
     <line stroke-linecap="round" x1="1312" y1="1010" x2="1312" y2="1585"/>

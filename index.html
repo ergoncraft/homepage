@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-i18n="meta.title">ErgonCraft — Tools for Humans</title>
   <meta name="description" data-i18n-attr="content:meta.desc" content="ErgonCraft builds honest software tools for the human mind: no slot-machine tricks, no data collection. Engineered for presence, purpose, and peace of mind.">
-  <meta name="theme-color" content="#1E242B">
+  <meta name="theme-color" content="#13171B">
   <link rel="icon" type="image/svg+xml" href="assets/favicon-sage.svg" id="favicon">
   <link rel="preload" href="fonts/Inter-Variable.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="css/tokens.css">
@@ -396,7 +396,7 @@
     function applyPalette(p) {
       root.dataset.palette = p;
       favicon.href = "assets/favicon-" + p + ".svg";
-      themeColor.content = getComputedStyle(root).getPropertyValue("--c-dark-1").trim();
+      themeColor.content = getComputedStyle(root).getPropertyValue("--c-deep").trim();
       press("data-set-palette", p);
     }
 
