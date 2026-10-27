@@ -1,0 +1,93 @@
+/* ==========================================================================
+   ErgonCraft design tokens
+   --------------------------------------------------------------------------
+   1. Raw palettes  (one block per concept, selected via <html data-palette>)
+   2. Semantic tokens (what components use — derived from the raw palette)
+   3. Type, spacing, radius, motion
+   To add a palette: copy a [data-palette] block, change the five colours
+   and the logo fill. Nothing else needs to change.
+   ========================================================================== */
+
+/* --- 1. Raw palettes ---------------------------------------------------- */
+
+/* Concept A: Slate & Sage — natural, calming, mindful (default) */
+:root,
+[data-palette="sage"] {
+  --c-dark-1: #1E242B;   /* Primary dark / surface — deep graphite blue-grey */
+  --c-dark-2: #3A4550;   /* Secondary dark — slate */
+  --c-mid:    #5A6B7B;   /* Intermediate — muted steel blue */
+  --c-accent: #8EA89D;   /* Accent — muted sage green */
+  --c-light:  #F4F6F4;   /* Primary light — soft paper */
+
+  --logo-hex: var(--c-dark-1);
+}
+
+/* Concept D: Warm Ochre & Flesh — tactile, organic warmth */
+[data-palette="ochre"] {
+  --c-dark-1: #1A1716;   /* Primary dark — warm black */
+  --c-dark-2: #2C2623;   /* Warm espresso iron — cards & surfaces */
+  --c-mid:    #9C6A5B;   /* Terracotta blush — dividers & borders */
+  --c-accent: #E4A083;   /* Warm flesh & blush — logo hand & interaction */
+  --c-light:  #FBF7F4;   /* Warm linen */
+
+  --logo-hex: var(--c-dark-2);
+}
+
+/* --- 2. Semantic tokens ------------------------------------------------- */
+
+:root {
+  /* Light surfaces (default page) */
+  --bg:            var(--c-light);
+  --surface:       color-mix(in oklab, var(--c-light) 45%, #fff);
+  --surface-sunk:  color-mix(in oklab, var(--c-light) 88%, var(--c-mid));
+  --ink:           var(--c-dark-1);
+  --ink-muted:     color-mix(in oklab, var(--c-dark-2) 70%, var(--c-mid));
+  --line:          color-mix(in oklab, var(--c-light) 78%, var(--c-mid));
+
+  /* The accent is light — on light surfaces use the deepened variant for
+     text, links and focus rings so they stay readable (WCAG AA). */
+  --accent:        var(--c-accent);
+  --accent-ink:    color-mix(in oklab, var(--c-accent) 45%, var(--c-dark-1));
+  --accent-wash:   color-mix(in oklab, var(--c-accent) 18%, var(--c-light));
+
+  /* Dark surfaces (hero, statement band, footer) */
+  --dark-bg:       var(--c-dark-1);
+  --dark-surface:  color-mix(in oklab, var(--c-dark-1) 70%, var(--c-dark-2));
+  --dark-ink:      var(--c-light);
+  --dark-muted:    color-mix(in oklab, var(--c-light) 68%, var(--c-dark-1));
+  --dark-line:     color-mix(in oklab, var(--c-dark-1) 78%, var(--c-light));
+
+  /* Logo */
+  --logo-rim:      #272C30;
+  --logo-accent:   var(--c-accent);
+
+  /* --- 3. Type, spacing, shape, motion --------------------------------- */
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --fs-xs:   0.8125rem;
+  --fs-sm:   0.9375rem;
+  --fs-base: 1.0625rem;
+  --fs-lg:   1.25rem;
+  --fs-xl:   clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  --fs-2xl:  clamp(2rem, 1.4rem + 2.6vw, 3.25rem);
+  --fs-3xl:  clamp(2.5rem, 1.6rem + 4vw, 4.5rem);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: clamp(4.5rem, 3rem + 6vw, 8rem);
+
+  --radius-sm: 8px;
+  --radius:    16px;
+  --radius-lg: 28px;
+
+  --container: 1120px;
+  --gutter:    clamp(1rem, 0.5rem + 2.5vw, 2rem);
+
+  --ease:      cubic-bezier(.2, .7, .2, 1);
+}
