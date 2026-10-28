@@ -314,7 +314,6 @@ a:focus-visible, button:focus-visible {
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-5);
   margin-top: var(--space-8);
-  counter-reset: principle;
 }
 
 .principle {
@@ -323,21 +322,11 @@ a:focus-visible, button:focus-visible {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  counter-increment: principle;
   transition: transform .3s var(--ease), box-shadow .3s var(--ease);
 }
 .principle:hover {
   transform: translateY(-3px);
   box-shadow: 0 18px 40px -24px color-mix(in oklab, var(--c-dark-1) 45%, transparent);
-}
-.principle::before {
-  content: "0" counter(principle);
-  display: block;
-  margin-bottom: var(--space-5);
-  font-size: var(--fs-xs);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--accent-ink);
 }
 .principle .icon {
   width: 2.75rem; height: 2.75rem;
