@@ -10,8 +10,21 @@
 
 /* --- 1. Raw palettes ---------------------------------------------------- */
 
-/* Concept A: Slate & Sage — natural, calming, mindful (default) */
+/* Concept D: Warm Ochre & Flesh — tactile, organic warmth (default) */
 :root,
+[data-palette="ochre"] {
+  --c-dark-1: #1A1716;   /* Primary dark — warm black */
+  --c-dark-2: #2C2623;   /* Warm espresso iron — cards & surfaces */
+  --c-mid:    #9C6A5B;   /* Terracotta blush — dividers & borders */
+  --c-accent: #E4A083;   /* Warm flesh & blush — logo hand & interaction */
+  --c-light:  #FBF7F4;   /* Warm linen */
+
+  --c-deep:   var(--c-dark-1);   /* dark section background */
+  --logo-hex: var(--c-dark-2);
+}
+
+/* Concept A: Slate & Sage — natural, calming, mindful
+   (must come after the default block: same specificity, later wins) */
 [data-palette="sage"] {
   --c-dark-1: #1E242B;   /* Primary dark / surface — deep graphite blue-grey */
   --c-dark-2: #3A4550;   /* Secondary dark — slate */
@@ -23,18 +36,6 @@
      keep the hexagon visible (as Ochre does with Dark 2 on Dark 1). */
   --c-deep:   #13171B;   /* Dark 1, deepened — dark section background */
   --logo-hex: var(--c-dark-1);
-}
-
-/* Concept D: Warm Ochre & Flesh — tactile, organic warmth */
-[data-palette="ochre"] {
-  --c-dark-1: #1A1716;   /* Primary dark — warm black */
-  --c-dark-2: #2C2623;   /* Warm espresso iron — cards & surfaces */
-  --c-mid:    #9C6A5B;   /* Terracotta blush — dividers & borders */
-  --c-accent: #E4A083;   /* Warm flesh & blush — logo hand & interaction */
-  --c-light:  #FBF7F4;   /* Warm linen */
-
-  --c-deep:   var(--c-dark-1);   /* dark section background */
-  --logo-hex: var(--c-dark-2);
 }
 
 /* --- 2. Semantic tokens ------------------------------------------------- */

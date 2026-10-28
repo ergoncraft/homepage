@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en" data-palette="sage">
+<html lang="en" data-palette="ochre">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-i18n="meta.title">ErgonCraft — Tools for Humans</title>
   <meta name="description" data-i18n-attr="content:meta.desc" content="ErgonCraft builds honest software tools for the human mind: no slot-machine tricks, no data collection. Engineered for presence, purpose, and peace of mind.">
-  <meta name="theme-color" content="#13171B">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon-sage.svg" id="favicon">
+  <meta name="theme-color" content="#1A1716">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon-ochre.svg" id="favicon">
   <link rel="preload" href="fonts/Inter-Variable.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -87,13 +87,13 @@
         <a href="#impressum" data-i18n="nav.impressum">Impressum</a>
       </div>
       <div class="switch" role="group" aria-label="Colour palette" data-i18n-attr="aria-label:nav.palette">
-        <button type="button" data-set-palette="sage" aria-pressed="true" title="Slate &amp; Sage">
-          <span class="swatch" style="--sw-dark:#1E242B;--sw-accent:#8EA89D"></span>
-          <span class="label">Sage</span>
-        </button>
-        <button type="button" data-set-palette="ochre" aria-pressed="false" title="Warm Ochre &amp; Flesh">
+        <button type="button" data-set-palette="ochre" aria-pressed="true" title="Warm Ochre &amp; Flesh">
           <span class="swatch" style="--sw-dark:#2C2623;--sw-accent:#E4A083"></span>
           <span class="label">Ochre</span>
+        </button>
+        <button type="button" data-set-palette="sage" aria-pressed="false" title="Slate &amp; Sage">
+          <span class="swatch" style="--sw-dark:#1E242B;--sw-accent:#8EA89D"></span>
+          <span class="label">Sage</span>
         </button>
       </div>
       <div class="switch switch-text" role="group" aria-label="Language" data-i18n-attr="aria-label:nav.lang">
@@ -456,7 +456,7 @@
       });
     });
 
-    applyPalette(root.dataset.palette || "sage");
+    applyPalette(root.dataset.palette || "ochre");
     applyLang(root.lang);
   })();
 </script>
