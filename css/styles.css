@@ -253,18 +253,6 @@ a:focus-visible, button:focus-visible {
   overflow: hidden;
   padding-block: clamp(4rem, 2rem + 8vw, 8rem);
 }
-.hero::before {               /* soft glow behind the mark */
-  content: "";
-  position: absolute;
-  right: -10%;
-  top: 50%;
-  width: min(70vw, 720px);
-  aspect-ratio: 1;
-  transform: translateY(-50%);
-  background: radial-gradient(closest-side, color-mix(in oklab, var(--accent) 22%, transparent), transparent);
-  pointer-events: none;
-}
-
 .hero .container {
   position: relative;
   display: grid;
@@ -308,7 +296,6 @@ a:focus-visible, button:focus-visible {
 @media (max-width: 860px) {
   .hero .container { grid-template-columns: 1fr; gap: var(--space-7); }
   .hero-mark { order: -1; width: 180px; justify-self: start; }
-  .hero::before { right: auto; left: -20%; top: 18%; }
 }
 
 /* --- Manifesto ---------------------------------------------------------- */
