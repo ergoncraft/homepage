@@ -49,6 +49,16 @@
     </g>
   </symbol>
 
+  <!-- Filled logo mark for small sizes (header, footer, favicon):
+       solid hand silhouette on the hexagon -->
+  <symbol id="ec-mark-filled" viewBox="0 0 38536 46135">
+    <polygon style="fill:var(--logo-hex);stroke:var(--logo-rim);stroke-width:697;stroke-linejoin:round" points="19275,349 38187,11702 38187,34433 19275,45786 349,34433 349,11702"/>
+    <g style="fill:var(--logo-accent)">
+      <polygon points="15754,18677 12403,19586 19275,8987 26133,19586 22132,18677 22132,19223 15754,19223"/>
+      <path d="M15754 18677l0 11366c-1260,-1052 -2792,-2442 -3832,-3494 -636,-832 -1610,-1182 -2585,-897 -1039,338 -1532,1183 -974,2014l6131 8638c832,1195 1260,1961 1260,3494l0 4283 3341 2004c54,33 116,50 180,50 63,0 125,-17 179,-50l6406 -3845 0 -350c0,-1741 338,-3144 832,-4183 909,-1741 1740,-3144 1740,-5573l0 -6144c0,-1948 -3273,-1948 -3273,0l0 -2091c0,-1949 -3027,-1949 -3027,0l0 -5222 -6378 0z"/>
+    </g>
+  </symbol>
+
   <!-- Line icons (24px grid, stroke = currentColor) -->
   <symbol id="i-human" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3.5"/><path d="M5 20.5c.8-4 3.6-6.5 7-6.5s6.2 2.5 7 6.5"/></g></symbol>
   <symbol id="i-focus" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6" fill="currentColor"/></g></symbol>
@@ -67,7 +77,7 @@
 <header class="site-header">
   <div class="container">
     <a class="brand" href="#top" aria-label="ErgonCraft — home" data-i18n-attr="aria-label:brand.home">
-      <svg class="mark" aria-hidden="true"><use href="#ec-mark"/></svg>
+      <svg class="mark" aria-hidden="true"><use href="#ec-mark-filled"/></svg>
       <span class="wordmark"><b>ERGON</b><span>CRAFT</span></span>
     </a>
     <nav class="nav" aria-label="Main" data-i18n-attr="aria-label:nav.main">
@@ -165,7 +175,7 @@
             <em>action</em>, <em>work</em>, or <em>deed</em> — and the root of
             <em>ergonomics</em>, the science of designing tools for human use.
             Combined with <em>Craft</em>, it represents our core philosophy:
-            creating precise, honest software tools that serve human action in
+            creating precise, honest tools that serve human action in
             real life, rather than trapping the mind in the digital world.
           </p>
         </div>
@@ -181,6 +191,14 @@
         <h2 data-i18n="prod.title">Tools from the workshop.</h2>
         <p data-i18n="prod.lead">Each one does a job well, respects your attention, and keeps your data where it belongs: with you.</p>
       </div>
+
+      <figure class="quote">
+        <blockquote lang="en"><p>I am drowning in a digital sea</p></blockquote>
+        <figcaption>
+          <cite data-i18n="prod.quote.cite">Thrice, “Digital Sea”</cite>
+          <span class="quote-remark" data-i18n="prod.quote.remark">That is what we want to prevent.</span>
+        </figcaption>
+      </figure>
 
       <article class="product" aria-labelledby="launcher-title">
         <div>
@@ -220,7 +238,7 @@
             <li>
               <svg aria-hidden="true"><use href="#i-declutter"/></svg>
               <div><h4 data-i18n="prod.f5.h">Declutter</h4>
-                <p data-i18n="prod.f5.p">See which apps you haven't opened in months and remove them, one confirmation at a time.</p></div>
+                <p data-i18n="prod.f5.p">See which apps you haven't opened in months and remove them, one at a time.</p></div>
             </li>
             <li>
               <svg aria-hidden="true"><use href="#i-craft"/></svg>
@@ -290,7 +308,7 @@
       </article>
 
       <div class="more">
-        <svg class="mark" aria-hidden="true"><use href="#ec-mark"/></svg>
+        <svg class="mark" aria-hidden="true"><use href="#ec-mark-filled"/></svg>
         <p data-i18n="prod.more">More tools are on the workbench. They'll appear here when they're ready.</p>
       </div>
     </div>
@@ -366,7 +384,7 @@
 <footer class="site-footer is-dark">
   <div class="container">
     <a class="brand" href="#top" aria-label="ErgonCraft — back to top" data-i18n-attr="aria-label:brand.top">
-      <svg class="mark" aria-hidden="true"><use href="#ec-mark"/></svg>
+      <svg class="mark" aria-hidden="true"><use href="#ec-mark-filled"/></svg>
       <span class="wordmark"><b>ERGON</b><span>CRAFT</span></span>
     </a>
     <nav class="footer-links" aria-label="Footer">
