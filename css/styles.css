@@ -574,7 +574,7 @@ a:focus-visible, button:focus-visible {
   margin-bottom: var(--space-3);
 }
 .legal-grid p, .legal-grid address { font-style: normal; font-size: var(--fs-sm); }
-.legal-grid a { color: var(--accent-ink); text-underline-offset: 3px; }
+.legal-grid a, .legal-text a { color: var(--accent-ink); text-underline-offset: 3px; }
 
 .legal-text {
   margin-top: var(--space-7);
