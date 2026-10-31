@@ -34,8 +34,11 @@ window.EC_I18N = {
     "man.p3.h": "Transparente Ethik",
     "man.p3.p": "Ein fairer Preis, null Datensammlungen und voller Respekt für deine Privatsphäre.",
     "man.statement": "Technologie ist unsere Zukunft. <span>Aber das echte Leben findet außerhalb des Bildschirms statt.</span>",
-    "man.name.h": "Der Name ErgonCraft",
-    "man.name.p": "Der Name leitet sich vom altgriechischen Wort <em>Ergon</em> (ἔργον) ab, was <em>Handlung</em>, <em>Werk</em> oder <em>vollbrachte Tat</em> bedeutet – und auch die Wurzel von <em>Ergonomie</em> bildet, der Wissenschaft der menschengerechten Gestaltung von Werkzeugen. Kombiniert mit <em>Craft</em> (Handwerk) steht der Name für unsere Philosophie: präzise, ehrliche Werkzeuge zu schaffen, die dem menschlichen Handeln im echten Leben dienen, anstatt den Geist in der digitalen Welt zu binden.",
+    "man.name.intro": "Der Name ErgonCraft vereint zwei wesentliche Säulen bewussten Designs:",
+    "man.name.ergon": "Das altgriechische Wort für <em>Handlung</em>, <em>Tat</em> oder <em>eigentümliche Funktion</em>. Es ist die Wurzel der <em>Ergonomie</em> und bestimmt den wahren Zweck eines Werkzeugs: das zu tun, wofür es gemacht wurde.",
+    "man.name.craft": "Die Verpflichtung, präzise, ehrliche und kompromisslose Software zu bauen.",
+    "man.name.phil.h": "Unsere Philosophie",
+    "man.name.phil.p": "Jedes Werkzeug – jede App – muss einem einzigen, klaren <em>Ergon</em> dienen. Ob sie Ablenkungen vom Startbildschirm entfernt, ruhige und neutrale Nachrichten liefert oder Gedanken mühelos festhält: Unsere Software ist eine stille Verlängerung deiner Absicht. Wir bauen Werkzeuge, die ihre Aufgabe mit absoluter Präzision erledigen – damit du zurück in dein Leben findest, statt in deinem Bildschirm gefangen zu sein.",
 
     "prod.eyebrow": "Produkte",
     "prod.title": "Werkzeuge aus der Werkstatt.",

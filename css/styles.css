@@ -382,8 +382,22 @@ a:focus-visible, button:focus-visible {
   color: var(--accent-ink);
 }
 .name-note h3 { font-size: var(--fs-base); font-weight: 700; }
+.name-note h4 { margin-top: var(--space-6); font-size: var(--fs-base); font-weight: 700; }
 .name-note p { margin-top: var(--space-2); max-width: 44rem; color: var(--ink-muted); }
 .name-note em { color: var(--ink); }
+
+.name-terms {
+  display: grid;
+  gap: var(--space-4);
+  margin: var(--space-5) 0 0;
+  max-width: 44rem;
+}
+.name-terms > div {
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--accent);
+}
+.name-terms dt { font-weight: 700; color: var(--ink); }
+.name-terms dd { margin: var(--space-1) 0 0; color: var(--ink-muted); }
 
 @media (max-width: 640px) {
   .name-note { grid-template-columns: 1fr; gap: var(--space-4); }
