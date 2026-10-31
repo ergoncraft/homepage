@@ -22,7 +22,7 @@ window.EC_I18N = {
     "hero.lead": "Wir glauben, dass Technologie ein Werkzeug sein sollte – wie ein gut geformter Hammer oder ein verlässlicher Kompass. Sie sollte <strong>deine Fähigkeiten erweitern, nicht deine Aufmerksamkeit stehlen.</strong>",
     "hero.cta1": "Zum Manifest",
     "hero.cta2": "Ergon Launcher entdecken",
-    "hero.mark": "ErgonCraft-Logo: eine Hand mit einem Pfeil nach oben in einem Sechseck",
+    "hero.mark": "ErgonCraft-Logo: ein Ensō-Kreis in einem Sechseck",
 
     "man.eyebrow": "Das ErgonCraft Manifest",
     "man.title": "Software für den menschlichen Geist, nicht für Algorithmen.",
